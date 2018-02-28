@@ -209,6 +209,12 @@ namespace SekundarNovi
 
         private void frmOsnovna_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'sekundarDataSet.OL' table. You can move, or remove it, as needed.
+            {
+                this.oLTableAdapter.Fill(this.sekundarDataSet.OL);
+                cmbKolonaZaPretragu.SelectedIndex = 1;
+            }
+
             FilijalaCmbBoxFill();
             IspostavaCmbFill();
             OOcmbFill();
@@ -226,6 +232,22 @@ namespace SekundarNovi
             cmbPol.DataSource = list;
             cmbPol.ValueMember = "ID";
             cmbPol.DisplayMember = "Name";
+        }
+
+        private void tabPretraga_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtPodatakZaPretragu_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (string.IsNullOrEmpty(txtPodatakZaPretragu.Text))
+                    oLBindingSource1.Filter = string.Empty;
+                else
+                    oLBindingSource1.Filter = string.Format("{0} = '{1}'", cmbKolonaZaPretragu.Text, txtPodatakZaPretragu.Text);
+            }
         }
     }
     internal class Pol

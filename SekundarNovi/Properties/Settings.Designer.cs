@@ -34,5 +34,15 @@ namespace SekundarNovi.Properties {
                 return ((string)(this["connString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=K-0600-097\\SQL14;Initial Catalog=Sekundar;Integrated Security=True")]
+        public string SekundarConnectionString {
+            get {
+                return ((string)(this["SekundarConnectionString"]));
+            }
+        }
     }
 }
