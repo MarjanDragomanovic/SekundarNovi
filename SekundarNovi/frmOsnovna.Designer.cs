@@ -86,6 +86,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtBrojZK = new System.Windows.Forms.TextBox();
             this.tabFaktura = new System.Windows.Forms.TabPage();
+            this.fakbtnSnimiFakturu = new System.Windows.Forms.Button();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.fakdgvLek = new System.Windows.Forms.DataGridView();
             this.fakdgvMaterijal = new System.Windows.Forms.DataGridView();
@@ -139,7 +140,7 @@
             this.faktxtNapomenaKonv = new System.Windows.Forms.TextBox();
             this.faktxtIme = new System.Windows.Forms.TextBox();
             this.faktxtPrezime = new System.Windows.Forms.TextBox();
-            this.fadtxtJMBG = new System.Windows.Forms.TextBox();
+            this.faktxtJMBG = new System.Windows.Forms.TextBox();
             this.faktxtLBO = new System.Windows.Forms.TextBox();
             this.faktxtBrojZK = new System.Windows.Forms.TextBox();
             this.label38 = new System.Windows.Forms.Label();
@@ -151,7 +152,9 @@
             this.label36 = new System.Windows.Forms.Label();
             this.oLBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.oLTableAdapter = new SekundarNovi.SekundarDataSetTableAdapters.OLTableAdapter();
-            this.fakbtnSnimiFakturu = new System.Windows.Forms.Button();
+            this.ID_Usluga = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvcmbSifra = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.dgvtxtSifraEFOsiguranik = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPretraga.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -752,6 +755,16 @@
             this.tabFaktura.Text = "Faktura";
             this.tabFaktura.UseVisualStyleBackColor = true;
             // 
+            // fakbtnSnimiFakturu
+            // 
+            this.fakbtnSnimiFakturu.Location = new System.Drawing.Point(961, 140);
+            this.fakbtnSnimiFakturu.Name = "fakbtnSnimiFakturu";
+            this.fakbtnSnimiFakturu.Size = new System.Drawing.Size(112, 34);
+            this.fakbtnSnimiFakturu.TabIndex = 7;
+            this.fakbtnSnimiFakturu.Text = "Snimi Fakturu";
+            this.fakbtnSnimiFakturu.UseVisualStyleBackColor = true;
+            this.fakbtnSnimiFakturu.Click += new System.EventHandler(this.fakbtnSnimiFakturu_Click);
+            // 
             // groupBox6
             // 
             this.groupBox6.Controls.Add(this.fakdgvLek);
@@ -787,6 +800,10 @@
             // fakdgvUsluge
             // 
             this.fakdgvUsluge.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.fakdgvUsluge.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID_Usluga,
+            this.dgvcmbSifra,
+            this.dgvtxtSifraEFOsiguranik});
             this.fakdgvUsluge.Location = new System.Drawing.Point(13, 43);
             this.fakdgvUsluge.Name = "fakdgvUsluge";
             this.fakdgvUsluge.Size = new System.Drawing.Size(972, 136);
@@ -1001,7 +1018,7 @@
             this.groupBox4.Controls.Add(this.faktxtNapomenaKonv);
             this.groupBox4.Controls.Add(this.faktxtIme);
             this.groupBox4.Controls.Add(this.faktxtPrezime);
-            this.groupBox4.Controls.Add(this.fadtxtJMBG);
+            this.groupBox4.Controls.Add(this.faktxtJMBG);
             this.groupBox4.Controls.Add(this.faktxtLBO);
             this.groupBox4.Controls.Add(this.faktxtBrojZK);
             this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -1258,12 +1275,12 @@
             this.faktxtPrezime.Size = new System.Drawing.Size(188, 22);
             this.faktxtPrezime.TabIndex = 0;
             // 
-            // fadtxtJMBG
+            // faktxtJMBG
             // 
-            this.fadtxtJMBG.Location = new System.Drawing.Point(77, 77);
-            this.fadtxtJMBG.Name = "fadtxtJMBG";
-            this.fadtxtJMBG.Size = new System.Drawing.Size(188, 22);
-            this.fadtxtJMBG.TabIndex = 0;
+            this.faktxtJMBG.Location = new System.Drawing.Point(77, 77);
+            this.faktxtJMBG.Name = "faktxtJMBG";
+            this.faktxtJMBG.Size = new System.Drawing.Size(188, 22);
+            this.faktxtJMBG.TabIndex = 0;
             // 
             // faktxtLBO
             // 
@@ -1355,15 +1372,25 @@
             // 
             this.oLTableAdapter.ClearBeforeFill = true;
             // 
-            // fakbtnSnimiFakturu
+            // ID_Usluga
             // 
-            this.fakbtnSnimiFakturu.Location = new System.Drawing.Point(961, 140);
-            this.fakbtnSnimiFakturu.Name = "fakbtnSnimiFakturu";
-            this.fakbtnSnimiFakturu.Size = new System.Drawing.Size(112, 34);
-            this.fakbtnSnimiFakturu.TabIndex = 7;
-            this.fakbtnSnimiFakturu.Text = "Snimi Fakturu";
-            this.fakbtnSnimiFakturu.UseVisualStyleBackColor = true;
-            this.fakbtnSnimiFakturu.Click += new System.EventHandler(this.fakbtnSnimiFakturu_Click);
+            this.ID_Usluga.DataPropertyName = "ID_Usluga";
+            this.ID_Usluga.HeaderText = "IDUsluga";
+            this.ID_Usluga.Name = "ID_Usluga";
+            this.ID_Usluga.Visible = false;
+            // 
+            // dgvcmbSifra
+            // 
+            this.dgvcmbSifra.DataPropertyName = "SifraUsluga";
+            this.dgvcmbSifra.HeaderText = "Usluga";
+            this.dgvcmbSifra.Name = "dgvcmbSifra";
+            // 
+            // dgvtxtSifraEFOsiguranik
+            // 
+            this.dgvtxtSifraEFOsiguranik.DataPropertyName = "SifraEFOsiguranik";
+            this.dgvtxtSifraEFOsiguranik.HeaderText = "SifraEFOsiguranik";
+            this.dgvtxtSifraEFOsiguranik.Name = "dgvtxtSifraEFOsiguranik";
+            this.dgvtxtSifraEFOsiguranik.Visible = false;
             // 
             // frmOsnovna
             // 
@@ -1485,7 +1512,7 @@
         private System.Windows.Forms.TextBox faktxtBrojIspKonv;
         private System.Windows.Forms.TextBox faktxtIme;
         private System.Windows.Forms.TextBox faktxtPrezime;
-        private System.Windows.Forms.TextBox fadtxtJMBG;
+        private System.Windows.Forms.TextBox faktxtJMBG;
         private System.Windows.Forms.TextBox faktxtLBO;
         private System.Windows.Forms.TextBox faktxtBrojZK;
         private System.Windows.Forms.GroupBox groupBox6;
@@ -1531,5 +1558,8 @@
         private System.Windows.Forms.DataGridView fakdgvLek;
         private System.Windows.Forms.DataGridView fakdgvMaterijal;
         private System.Windows.Forms.Button fakbtnSnimiFakturu;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID_Usluga;
+        private System.Windows.Forms.DataGridViewComboBoxColumn dgvcmbSifra;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvtxtSifraEFOsiguranik;
     }
 }

@@ -13,6 +13,8 @@ namespace SekundarNovi
 {
     public partial class frmOsnovna : Form
     {
+        int inSifra = 0;
+
         public frmOsnovna()
         {
             InitializeComponent();
@@ -261,41 +263,59 @@ namespace SekundarNovi
                     //EFOsiguranik
                     SqlCommand sqlCommand = new SqlCommand("Faktura", connection);
                     sqlCommand.CommandType = CommandType.StoredProcedure;
-                    sqlCommand.Parameters.AddWithValue("@Sifra",);
-                    sqlCommand.Parameters.AddWithValue("@SifraELFak",);
-                    sqlCommand.Parameters.AddWithValue("@Filijala",);
-                    sqlCommand.Parameters.AddWithValue("@Ispostava",);
-                    sqlCommand.Parameters.AddWithValue("@Prezime",);
-                    sqlCommand.Parameters.AddWithValue("@Ime",);
-                    sqlCommand.Parameters.AddWithValue("@LBO",);
-                    sqlCommand.Parameters.AddWithValue("@JMBG",);
-                    sqlCommand.Parameters.AddWithValue("@BZK",);
-                    sqlCommand.Parameters.AddWithValue("@Nosilac",);
-                    sqlCommand.Parameters.AddWithValue("@VrstaLecenja",);
-                    sqlCommand.Parameters.AddWithValue("@DatumOd",);
-                    sqlCommand.Parameters.AddWithValue("@DatumDo",);
-                    sqlCommand.Parameters.AddWithValue("@UpuDijag",);
-                    sqlCommand.Parameters.AddWithValue("@ZavrDijag",);
-                    sqlCommand.Parameters.AddWithValue("@OOParticipacija",);
-                    sqlCommand.Parameters.AddWithValue("@Ucesce",);
-                    sqlCommand.Parameters.AddWithValue("@BrojKartona",);
-                    sqlCommand.Parameters.AddWithValue("@OO",);
-                    sqlCommand.Parameters.AddWithValue("@POO",);
-                    sqlCommand.Parameters.AddWithValue("@OLPoKovenciji",);
-                    sqlCommand.Parameters.AddWithValue("@Drzava",);
-                    sqlCommand.Parameters.AddWithValue("@VrstaIspraveKonvencija",);
-                    sqlCommand.Parameters.AddWithValue("@BrojIspraveKonvencija",);
-                    sqlCommand.Parameters.AddWithValue("@Napomena",);
-                    sqlCommand.Parameters.AddWithValue("@TipUsluge",);
-                    sqlCommand.Parameters.AddWithValue("@SifraOL",);
-                    sqlCommand.Parameters.AddWithValue("@IznFak",);
-                    sqlCommand.Parameters.AddWithValue("@ID_EFVrsta",);
-                    sqlCommand.Parameters.AddWithValue("@Dijag2",);
-                    sqlCommand.Parameters.AddWithValue("@Dijag3",);
-                    sqlCommand.Parameters.AddWithValue("@SifSluPri",);
-                    sqlCommand.Parameters.AddWithValue("@SifSluOtp",);
+                    sqlCommand.Parameters.AddWithValue("@Sifra", inSifra);
+                    //sqlCommand.Parameters.AddWithValue("@SifraELFak",);
+                    sqlCommand.Parameters.AddWithValue("@Filijala",fakcmbFilijala.SelectedValue);
+                    sqlCommand.Parameters.AddWithValue("@Ispostava",fakcmbIspostava.SelectedValue);
+                    sqlCommand.Parameters.AddWithValue("@Prezime",faktxtPrezime.Text.Trim());
+                    sqlCommand.Parameters.AddWithValue("@Ime",faktxtIme.Text.Trim());
+                    sqlCommand.Parameters.AddWithValue("@LBO",faktxtLBO.Text.Trim());
+                    sqlCommand.Parameters.AddWithValue("@JMBG",faktxtJMBG.Text.Trim());
+                    sqlCommand.Parameters.AddWithValue("@BZK", faktxtBrojZK.Text.Trim());
+                    sqlCommand.Parameters.AddWithValue("@Nosilac",fakrdbNosilacDA.Checked ? "1" : "0");
+                    sqlCommand.Parameters.AddWithValue("@VrstaLecenja",fakcmbVrstaLec.SelectedValue);
+                    sqlCommand.Parameters.AddWithValue("@DatumOd",fakdtpDatumPoc.Value);
+                    sqlCommand.Parameters.AddWithValue("@DatumDo",fakdtpDatumKraja.Value);
+                    sqlCommand.Parameters.AddWithValue("@UpuDijag",fakcmbUputnaDij.SelectedValue);
+                    sqlCommand.Parameters.AddWithValue("@ZavrDijag",fakcmbZavrsnaDij.SelectedValue);
+                    sqlCommand.Parameters.AddWithValue("@OOParticipacija",fakcmbOOP.SelectedValue);
+                    //sqlCommand.Parameters.AddWithValue("@Ucesce",faktxtu);
+                    sqlCommand.Parameters.AddWithValue("@BrojKartona",faktxtBrojKartona);
+                    sqlCommand.Parameters.AddWithValue("@OO",faktxtOO.Text);
+                    sqlCommand.Parameters.AddWithValue("@POO",faktxtOO.Text);
+                    sqlCommand.Parameters.AddWithValue("@OLPoKovenciji",fakrdbKonvencijaDA.Checked ? "1" : "0");
+                    sqlCommand.Parameters.AddWithValue("@Drzava",fakcmbDrzava.SelectedValue);
+                    sqlCommand.Parameters.AddWithValue("@VrstaIspraveKonvencija",faktxtVrstaIspKonv.Text.Trim());
+                    sqlCommand.Parameters.AddWithValue("@BrojIspraveKonvencija",faktxtBrojIspKonv.Text.Trim());
+                    sqlCommand.Parameters.AddWithValue("@Napomena",faktxtNapomenaKonv.Text);
+                    sqlCommand.Parameters.AddWithValue("@TipUsluge",fakcmbTipUsluge.SelectedValue);
+                    //sqlCommand.Parameters.AddWithValue("@SifraOL",);
+                    //sqlCommand.Parameters.AddWithValue("@IznFak",);
+                    //sqlCommand.Parameters.AddWithValue("@ID_EFVrsta",);
+                    sqlCommand.Parameters.AddWithValue("@Dijag2", fakcmbDodatnaD1.SelectedValue);
+                    sqlCommand.Parameters.AddWithValue("@Dijag3", fakcmbDodatnaD2.SelectedValue);
+                    sqlCommand.Parameters.AddWithValue("@SifSluPri",fakcmbSluzbaPri.SelectedValue);
+                    sqlCommand.Parameters.AddWithValue("@SifSluOtp",fakcmbSluzbaOtp.SelectedValue);
                 }
 
+            }
+
+            bool ValidateFaktura()
+            {
+                bool _isValid = true;
+                if (faktxtPrezime.Text.Trim() == "")
+                {
+                    MessageBox.Show("Molim unesite prezime osiguranika...");
+                    _isValid = false;
+                }
+
+                // Ovde ostale validacije
+                if (faktxtIme.Text.Trim() == "")
+                {
+                    MessageBox.Show("Molim unesite ime osiguranika...");
+                    _isValid = false;
+                }
+                return _isValid;
             }
         }
     }
