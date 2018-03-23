@@ -1,6 +1,6 @@
 ﻿namespace SekundarNovi
 {
-    partial class frmOsnovna
+    partial class FrmOsnovna
     {
         /// <summary>
         /// Required designer variable.
@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPretraga = new System.Windows.Forms.TabPage();
             this.txtPodatakZaPretragu = new System.Windows.Forms.TextBox();
@@ -36,11 +37,17 @@
             this.label20 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvtxtSifra = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvtxtLBO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvtxtJMBG = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvtxtBrojZK = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvtxtIme = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvtxtPrezime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvcmbOO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Je_nosilac = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvtxtOO_participacije = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Sifra_Filijala = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Sifra_Ispostava = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.oLBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.sekundarDataSet = new SekundarNovi.SekundarDataSet();
             this.tabNovi = new System.Windows.Forms.TabPage();
@@ -86,16 +93,40 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtBrojZK = new System.Windows.Forms.TextBox();
             this.tabFaktura = new System.Windows.Forms.TabPage();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.fakrdbKonvencijaNE = new System.Windows.Forms.RadioButton();
+            this.fakrdbKonvencijaDA = new System.Windows.Forms.RadioButton();
+            this.label50 = new System.Windows.Forms.Label();
+            this.label49 = new System.Windows.Forms.Label();
+            this.label48 = new System.Windows.Forms.Label();
+            this.faktxtID_EFVrsta = new System.Windows.Forms.TextBox();
+            this.faktxtIznosFakture = new System.Windows.Forms.TextBox();
             this.fakbtnSnimiFakturu = new System.Windows.Forms.Button();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.fakdgvLek = new System.Windows.Forms.DataGridView();
             this.fakdgvMaterijal = new System.Windows.Forms.DataGridView();
             this.fakdgvUsluge = new System.Windows.Forms.DataGridView();
+            this.dgvtxtID_Usluga = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvcmbSifra = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.dgvtxtSifraEFOsiguranik = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvtxtKolicina = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvtxtCena = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvtxtUkupnaCena = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvtxtDatum = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvcmbID_Lekar = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.dgvcmbSluzba = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.dgvcmbSifSluUput = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.dgvtxtUcesce = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvtxtEksterniIDUsluge = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvtxtNapomena = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvtxtSifraElFak = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvcmbVrstaLecenja = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.fakcmbLekar = new System.Windows.Forms.ComboBox();
             this.label41 = new System.Windows.Forms.Label();
             this.fakcmbSluzba = new System.Windows.Forms.ComboBox();
             this.label40 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.faktxtUcesce = new System.Windows.Forms.TextBox();
             this.fakcmbDodatnaD2 = new System.Windows.Forms.ComboBox();
             this.label45 = new System.Windows.Forms.Label();
             this.fakcmbDodatnaD1 = new System.Windows.Forms.ComboBox();
@@ -112,15 +143,16 @@
             this.fakdtpDatumPoc = new System.Windows.Forms.DateTimePicker();
             this.label33 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.faktxtSifraOL = new System.Windows.Forms.TextBox();
+            this.fakcmbFilijala = new System.Windows.Forms.TextBox();
+            this.fakcmbPOO = new System.Windows.Forms.ComboBox();
+            this.fakcmbOO = new System.Windows.Forms.ComboBox();
             this.fakcmbDrzava = new System.Windows.Forms.ComboBox();
             this.fakcmbIspostava = new System.Windows.Forms.ComboBox();
-            this.fakcmbFilijala = new System.Windows.Forms.ComboBox();
             this.fakcmbOOP = new System.Windows.Forms.ComboBox();
-            this.fakrdbKonvencijaNE = new System.Windows.Forms.RadioButton();
             this.fakrdbNosilacNE = new System.Windows.Forms.RadioButton();
             this.label44 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
-            this.fakrdbKonvencijaDA = new System.Windows.Forms.RadioButton();
             this.label29 = new System.Windows.Forms.Label();
             this.fakrdbNosilacDA = new System.Windows.Forms.RadioButton();
             this.label28 = new System.Windows.Forms.Label();
@@ -152,9 +184,6 @@
             this.label36 = new System.Windows.Forms.Label();
             this.oLBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.oLTableAdapter = new SekundarNovi.SekundarDataSetTableAdapters.OLTableAdapter();
-            this.ID_Usluga = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvcmbSifra = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.dgvtxtSifraEFOsiguranik = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPretraga.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -165,6 +194,7 @@
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tabFaktura.SuspendLayout();
+            this.groupBox7.SuspendLayout();
             this.groupBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fakdgvLek)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fakdgvMaterijal)).BeginInit();
@@ -182,7 +212,7 @@
             this.tabControl1.Location = new System.Drawing.Point(10, 2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1087, 691);
+            this.tabControl1.Size = new System.Drawing.Size(1087, 757);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPretraga
@@ -195,11 +225,11 @@
             this.tabPretraga.Location = new System.Drawing.Point(4, 27);
             this.tabPretraga.Name = "tabPretraga";
             this.tabPretraga.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPretraga.Size = new System.Drawing.Size(1079, 660);
+            this.tabPretraga.Size = new System.Drawing.Size(1079, 726);
             this.tabPretraga.TabIndex = 0;
             this.tabPretraga.Text = "Pretraga";
             this.tabPretraga.UseVisualStyleBackColor = true;
-            this.tabPretraga.Click += new System.EventHandler(this.tabPretraga_Click);
+            this.tabPretraga.Click += new System.EventHandler(this.TabPretraga_Click);
             // 
             // txtPodatakZaPretragu
             // 
@@ -207,7 +237,7 @@
             this.txtPodatakZaPretragu.Name = "txtPodatakZaPretragu";
             this.txtPodatakZaPretragu.Size = new System.Drawing.Size(314, 24);
             this.txtPodatakZaPretragu.TabIndex = 4;
-            this.txtPodatakZaPretragu.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPodatakZaPretragu_KeyDown);
+            this.txtPodatakZaPretragu.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtPodatakZaPretragu_KeyDown);
             // 
             // cmbKolonaZaPretragu
             // 
@@ -251,11 +281,17 @@
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvtxtSifra,
             this.dgvtxtLBO,
             this.dgvtxtJMBG,
             this.dgvtxtBrojZK,
             this.dgvtxtIme,
-            this.dgvtxtPrezime});
+            this.dgvtxtPrezime,
+            this.dgvcmbOO,
+            this.Je_nosilac,
+            this.dgvtxtOO_participacije,
+            this.Sifra_Filijala,
+            this.Sifra_Ispostava});
             this.dataGridView1.DataSource = this.oLBindingSource1;
             this.dataGridView1.Location = new System.Drawing.Point(6, 55);
             this.dataGridView1.Name = "dataGridView1";
@@ -263,6 +299,14 @@
             this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataGridView1.Size = new System.Drawing.Size(960, 497);
             this.dataGridView1.TabIndex = 1;
+            this.dataGridView1.DoubleClick += new System.EventHandler(this.DataGridView1_DoubleClick);
+            // 
+            // dgvtxtSifra
+            // 
+            this.dgvtxtSifra.DataPropertyName = "Sifra";
+            this.dgvtxtSifra.HeaderText = "Sifra";
+            this.dgvtxtSifra.Name = "dgvtxtSifra";
+            this.dgvtxtSifra.ReadOnly = true;
             // 
             // dgvtxtLBO
             // 
@@ -289,19 +333,57 @@
             // 
             // dgvtxtIme
             // 
-            this.dgvtxtIme.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dgvtxtIme.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.dgvtxtIme.DataPropertyName = "Ime";
             this.dgvtxtIme.HeaderText = "Ime";
             this.dgvtxtIme.Name = "dgvtxtIme";
             this.dgvtxtIme.ReadOnly = true;
+            this.dgvtxtIme.Width = 57;
             // 
             // dgvtxtPrezime
             // 
-            this.dgvtxtPrezime.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dgvtxtPrezime.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.dgvtxtPrezime.DataPropertyName = "Prezime";
             this.dgvtxtPrezime.HeaderText = "Prezime";
             this.dgvtxtPrezime.Name = "dgvtxtPrezime";
             this.dgvtxtPrezime.ReadOnly = true;
+            this.dgvtxtPrezime.Width = 88;
+            // 
+            // dgvcmbOO
+            // 
+            this.dgvcmbOO.DataPropertyName = "Sifra_OO";
+            this.dgvcmbOO.HeaderText = "Sifra_OO";
+            this.dgvcmbOO.Name = "dgvcmbOO";
+            this.dgvcmbOO.ReadOnly = true;
+            // 
+            // Je_nosilac
+            // 
+            this.Je_nosilac.DataPropertyName = "Je_nosilac";
+            this.Je_nosilac.HeaderText = "Je_nosilac";
+            this.Je_nosilac.Name = "Je_nosilac";
+            this.Je_nosilac.ReadOnly = true;
+            // 
+            // dgvtxtOO_participacije
+            // 
+            this.dgvtxtOO_participacije.DataPropertyName = "OO_participacije";
+            this.dgvtxtOO_participacije.HeaderText = "OO_participacije";
+            this.dgvtxtOO_participacije.Name = "dgvtxtOO_participacije";
+            this.dgvtxtOO_participacije.ReadOnly = true;
+            this.dgvtxtOO_participacije.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // Sifra_Filijala
+            // 
+            this.Sifra_Filijala.DataPropertyName = "Sifra_Filijala";
+            this.Sifra_Filijala.HeaderText = "Sifra_Filijala";
+            this.Sifra_Filijala.Name = "Sifra_Filijala";
+            this.Sifra_Filijala.ReadOnly = true;
+            // 
+            // Sifra_Ispostava
+            // 
+            this.Sifra_Ispostava.DataPropertyName = "Sifra_Ispostava";
+            this.Sifra_Ispostava.HeaderText = "Sifra_Ispostava";
+            this.Sifra_Ispostava.Name = "Sifra_Ispostava";
+            this.Sifra_Ispostava.ReadOnly = true;
             // 
             // oLBindingSource1
             // 
@@ -319,11 +401,11 @@
             this.tabNovi.Controls.Add(this.groupBox1);
             this.tabNovi.Location = new System.Drawing.Point(4, 27);
             this.tabNovi.Name = "tabNovi";
-            this.tabNovi.Size = new System.Drawing.Size(1079, 660);
+            this.tabNovi.Size = new System.Drawing.Size(1079, 726);
             this.tabNovi.TabIndex = 2;
             this.tabNovi.Text = "Novi osiguranik";
             this.tabNovi.UseVisualStyleBackColor = true;
-            this.tabNovi.Click += new System.EventHandler(this.tabNovi_Click);
+            this.tabNovi.Click += new System.EventHandler(this.TabNovi_Click);
             // 
             // btnSnimiOsiguranika
             // 
@@ -333,7 +415,7 @@
             this.btnSnimiOsiguranika.TabIndex = 1;
             this.btnSnimiOsiguranika.Text = "Snimi";
             this.btnSnimiOsiguranika.UseVisualStyleBackColor = true;
-            this.btnSnimiOsiguranika.Click += new System.EventHandler(this.btnSnimiOsiguranika_Click);
+            this.btnSnimiOsiguranika.Click += new System.EventHandler(this.BtnSnimiOsiguranika_Click);
             // 
             // groupBox1
             // 
@@ -724,6 +806,12 @@
             // 
             // tabFaktura
             // 
+            this.tabFaktura.Controls.Add(this.groupBox7);
+            this.tabFaktura.Controls.Add(this.label50);
+            this.tabFaktura.Controls.Add(this.label49);
+            this.tabFaktura.Controls.Add(this.label48);
+            this.tabFaktura.Controls.Add(this.faktxtID_EFVrsta);
+            this.tabFaktura.Controls.Add(this.faktxtIznosFakture);
             this.tabFaktura.Controls.Add(this.fakbtnSnimiFakturu);
             this.tabFaktura.Controls.Add(this.groupBox6);
             this.tabFaktura.Controls.Add(this.groupBox5);
@@ -750,10 +838,84 @@
             this.tabFaktura.Location = new System.Drawing.Point(4, 27);
             this.tabFaktura.Name = "tabFaktura";
             this.tabFaktura.Padding = new System.Windows.Forms.Padding(3);
-            this.tabFaktura.Size = new System.Drawing.Size(1079, 660);
+            this.tabFaktura.Size = new System.Drawing.Size(1079, 726);
             this.tabFaktura.TabIndex = 1;
             this.tabFaktura.Text = "Faktura";
             this.tabFaktura.UseVisualStyleBackColor = true;
+            // 
+            // groupBox7
+            // 
+            this.groupBox7.Controls.Add(this.fakrdbKonvencijaNE);
+            this.groupBox7.Controls.Add(this.fakrdbKonvencijaDA);
+            this.groupBox7.Location = new System.Drawing.Point(981, 25);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(80, 80);
+            this.groupBox7.TabIndex = 12;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "groupBox7";
+            // 
+            // fakrdbKonvencijaNE
+            // 
+            this.fakrdbKonvencijaNE.AutoSize = true;
+            this.fakrdbKonvencijaNE.Location = new System.Drawing.Point(7, 50);
+            this.fakrdbKonvencijaNE.Name = "fakrdbKonvencijaNE";
+            this.fakrdbKonvencijaNE.Size = new System.Drawing.Size(44, 20);
+            this.fakrdbKonvencijaNE.TabIndex = 1;
+            this.fakrdbKonvencijaNE.TabStop = true;
+            this.fakrdbKonvencijaNE.Text = "Ne";
+            this.fakrdbKonvencijaNE.UseVisualStyleBackColor = true;
+            // 
+            // fakrdbKonvencijaDA
+            // 
+            this.fakrdbKonvencijaDA.AutoSize = true;
+            this.fakrdbKonvencijaDA.Location = new System.Drawing.Point(3, 18);
+            this.fakrdbKonvencijaDA.Name = "fakrdbKonvencijaDA";
+            this.fakrdbKonvencijaDA.Size = new System.Drawing.Size(45, 20);
+            this.fakrdbKonvencijaDA.TabIndex = 0;
+            this.fakrdbKonvencijaDA.TabStop = true;
+            this.fakrdbKonvencijaDA.Text = "DA";
+            this.fakrdbKonvencijaDA.UseVisualStyleBackColor = true;
+            // 
+            // label50
+            // 
+            this.label50.AutoSize = true;
+            this.label50.Location = new System.Drawing.Point(501, 362);
+            this.label50.Name = "label50";
+            this.label50.Size = new System.Drawing.Size(55, 16);
+            this.label50.TabIndex = 11;
+            this.label50.Text = "Učesće";
+            // 
+            // label49
+            // 
+            this.label49.AutoSize = true;
+            this.label49.Location = new System.Drawing.Point(441, 314);
+            this.label49.Name = "label49";
+            this.label49.Size = new System.Drawing.Size(53, 16);
+            this.label49.TabIndex = 11;
+            this.label49.Text = "Iznos F.";
+            // 
+            // label48
+            // 
+            this.label48.AutoSize = true;
+            this.label48.Location = new System.Drawing.Point(958, 295);
+            this.label48.Name = "label48";
+            this.label48.Size = new System.Drawing.Size(63, 16);
+            this.label48.TabIndex = 11;
+            this.label48.Text = "EF_Vrsta";
+            // 
+            // faktxtID_EFVrsta
+            // 
+            this.faktxtID_EFVrsta.Location = new System.Drawing.Point(961, 314);
+            this.faktxtID_EFVrsta.Name = "faktxtID_EFVrsta";
+            this.faktxtID_EFVrsta.Size = new System.Drawing.Size(100, 22);
+            this.faktxtID_EFVrsta.TabIndex = 10;
+            // 
+            // faktxtIznosFakture
+            // 
+            this.faktxtIznosFakture.Location = new System.Drawing.Point(509, 314);
+            this.faktxtIznosFakture.Name = "faktxtIznosFakture";
+            this.faktxtIznosFakture.Size = new System.Drawing.Size(100, 22);
+            this.faktxtIznosFakture.TabIndex = 9;
             // 
             // fakbtnSnimiFakturu
             // 
@@ -763,7 +925,7 @@
             this.fakbtnSnimiFakturu.TabIndex = 7;
             this.fakbtnSnimiFakturu.Text = "Snimi Fakturu";
             this.fakbtnSnimiFakturu.UseVisualStyleBackColor = true;
-            this.fakbtnSnimiFakturu.Click += new System.EventHandler(this.fakbtnSnimiFakturu_Click);
+            this.fakbtnSnimiFakturu.Click += new System.EventHandler(this.FakbtnSnimiFakturu_Click);
             // 
             // groupBox6
             // 
@@ -774,7 +936,7 @@
             this.groupBox6.Controls.Add(this.label41);
             this.groupBox6.Controls.Add(this.fakcmbSluzba);
             this.groupBox6.Controls.Add(this.label40);
-            this.groupBox6.Location = new System.Drawing.Point(6, 347);
+            this.groupBox6.Location = new System.Drawing.Point(9, 417);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(1067, 313);
             this.groupBox6.TabIndex = 6;
@@ -787,7 +949,7 @@
             this.fakdgvLek.Location = new System.Drawing.Point(503, 197);
             this.fakdgvLek.Name = "fakdgvLek";
             this.fakdgvLek.Size = new System.Drawing.Size(482, 110);
-            this.fakdgvLek.TabIndex = 1;
+            this.fakdgvLek.TabIndex = 4;
             // 
             // fakdgvMaterijal
             // 
@@ -795,19 +957,132 @@
             this.fakdgvMaterijal.Location = new System.Drawing.Point(13, 197);
             this.fakdgvMaterijal.Name = "fakdgvMaterijal";
             this.fakdgvMaterijal.Size = new System.Drawing.Size(482, 110);
-            this.fakdgvMaterijal.TabIndex = 1;
+            this.fakdgvMaterijal.TabIndex = 3;
             // 
             // fakdgvUsluge
             // 
             this.fakdgvUsluge.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.fakdgvUsluge.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ID_Usluga,
+            this.dgvtxtID_Usluga,
             this.dgvcmbSifra,
-            this.dgvtxtSifraEFOsiguranik});
+            this.dgvtxtSifraEFOsiguranik,
+            this.dgvtxtKolicina,
+            this.dgvtxtCena,
+            this.dgvtxtUkupnaCena,
+            this.dgvtxtDatum,
+            this.dgvcmbID_Lekar,
+            this.dgvcmbSluzba,
+            this.dgvcmbSifSluUput,
+            this.dgvtxtUcesce,
+            this.dgvtxtEksterniIDUsluge,
+            this.dgvtxtNapomena,
+            this.dgvtxtSifraElFak,
+            this.dgvcmbVrstaLecenja});
             this.fakdgvUsluge.Location = new System.Drawing.Point(13, 43);
             this.fakdgvUsluge.Name = "fakdgvUsluge";
-            this.fakdgvUsluge.Size = new System.Drawing.Size(972, 136);
-            this.fakdgvUsluge.TabIndex = 5;
+            this.fakdgvUsluge.Size = new System.Drawing.Size(1039, 136);
+            this.fakdgvUsluge.TabIndex = 2;
+            //this.fakdgvUsluge.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvcmbSifra);
+            // 
+            // dgvtxtID_Usluga
+            // 
+            this.dgvtxtID_Usluga.DataPropertyName = "ID_Usluga";
+            this.dgvtxtID_Usluga.HeaderText = "IDUsluga";
+            this.dgvtxtID_Usluga.Name = "dgvtxtID_Usluga";
+            // 
+            // dgvcmbSifra
+            // 
+            this.dgvcmbSifra.DataPropertyName = "SifraUsluga";
+            this.dgvcmbSifra.HeaderText = "Usluga";
+            this.dgvcmbSifra.Name = "dgvcmbSifra";
+            // 
+            // dgvtxtSifraEFOsiguranik
+            // 
+            this.dgvtxtSifraEFOsiguranik.DataPropertyName = "SifraEFOsiguranik";
+            this.dgvtxtSifraEFOsiguranik.HeaderText = "SifraEFOsiguranik";
+            this.dgvtxtSifraEFOsiguranik.Name = "dgvtxtSifraEFOsiguranik";
+            // 
+            // dgvtxtKolicina
+            // 
+            this.dgvtxtKolicina.DataPropertyName = "Kolicina";
+            this.dgvtxtKolicina.HeaderText = "Količina";
+            this.dgvtxtKolicina.Name = "dgvtxtKolicina";
+            // 
+            // dgvtxtCena
+            // 
+            this.dgvtxtCena.DataPropertyName = "Cena";
+            this.dgvtxtCena.HeaderText = "Cena";
+            this.dgvtxtCena.Name = "dgvtxtCena";
+            // 
+            // dgvtxtUkupnaCena
+            // 
+            this.dgvtxtUkupnaCena.DataPropertyName = "UkupnaCena";
+            this.dgvtxtUkupnaCena.HeaderText = "Ukupna cena";
+            this.dgvtxtUkupnaCena.Name = "dgvtxtUkupnaCena";
+            // 
+            // dgvtxtDatum
+            // 
+            this.dgvtxtDatum.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.dgvtxtDatum.DataPropertyName = "Datum";
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle1.Format = "d";
+            dataGridViewCellStyle1.NullValue = "00.0.0000.";
+            this.dgvtxtDatum.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvtxtDatum.HeaderText = "Datum";
+            this.dgvtxtDatum.Name = "dgvtxtDatum";
+            this.dgvtxtDatum.Width = 72;
+            // 
+            // dgvcmbID_Lekar
+            // 
+            this.dgvcmbID_Lekar.DataPropertyName = "ID_Lekar";
+            this.dgvcmbID_Lekar.HeaderText = "Lekar";
+            this.dgvcmbID_Lekar.Name = "dgvcmbID_Lekar";
+            this.dgvcmbID_Lekar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvcmbID_Lekar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // dgvcmbSluzba
+            // 
+            this.dgvcmbSluzba.DataPropertyName = "Sluzba";
+            this.dgvcmbSluzba.HeaderText = "Služba";
+            this.dgvcmbSluzba.Name = "dgvcmbSluzba";
+            // 
+            // dgvcmbSifSluUput
+            // 
+            this.dgvcmbSifSluUput.DataPropertyName = "SluzbaUput";
+            this.dgvcmbSifSluUput.HeaderText = "Uputila Služba";
+            this.dgvcmbSifSluUput.Name = "dgvcmbSifSluUput";
+            // 
+            // dgvtxtUcesce
+            // 
+            this.dgvtxtUcesce.DataPropertyName = "Ucesce";
+            this.dgvtxtUcesce.HeaderText = "Učešće";
+            this.dgvtxtUcesce.Name = "dgvtxtUcesce";
+            // 
+            // dgvtxtEksterniIDUsluge
+            // 
+            this.dgvtxtEksterniIDUsluge.DataPropertyName = "EksterniIDUsluge";
+            this.dgvtxtEksterniIDUsluge.HeaderText = "Eksterni ID Usluge";
+            this.dgvtxtEksterniIDUsluge.Name = "dgvtxtEksterniIDUsluge";
+            this.dgvtxtEksterniIDUsluge.Visible = false;
+            // 
+            // dgvtxtNapomena
+            // 
+            this.dgvtxtNapomena.DataPropertyName = "Napomena";
+            this.dgvtxtNapomena.HeaderText = "Napomena";
+            this.dgvtxtNapomena.Name = "dgvtxtNapomena";
+            // 
+            // dgvtxtSifraElFak
+            // 
+            this.dgvtxtSifraElFak.DataPropertyName = "SifraELFak";
+            this.dgvtxtSifraElFak.HeaderText = "Šifra El Fak";
+            this.dgvtxtSifraElFak.Name = "dgvtxtSifraElFak";
+            // 
+            // dgvcmbVrstaLecenja
+            // 
+            this.dgvcmbVrstaLecenja.DataPropertyName = "VrstaLecenja";
+            this.dgvcmbVrstaLecenja.HeaderText = "Vrsta lečenja";
+            this.dgvcmbVrstaLecenja.Name = "dgvcmbVrstaLecenja";
             // 
             // fakcmbLekar
             // 
@@ -815,12 +1090,12 @@
             this.fakcmbLekar.Location = new System.Drawing.Point(664, 13);
             this.fakcmbLekar.Name = "fakcmbLekar";
             this.fakcmbLekar.Size = new System.Drawing.Size(321, 24);
-            this.fakcmbLekar.TabIndex = 4;
+            this.fakcmbLekar.TabIndex = 1;
             // 
             // label41
             // 
             this.label41.AutoSize = true;
-            this.label41.Location = new System.Drawing.Point(617, 13);
+            this.label41.Location = new System.Drawing.Point(616, 16);
             this.label41.Name = "label41";
             this.label41.Size = new System.Drawing.Size(42, 16);
             this.label41.TabIndex = 1;
@@ -832,12 +1107,12 @@
             this.fakcmbSluzba.Location = new System.Drawing.Point(194, 13);
             this.fakcmbSluzba.Name = "fakcmbSluzba";
             this.fakcmbSluzba.Size = new System.Drawing.Size(321, 24);
-            this.fakcmbSluzba.TabIndex = 4;
+            this.fakcmbSluzba.TabIndex = 0;
             // 
             // label40
             // 
             this.label40.AutoSize = true;
-            this.label40.Location = new System.Drawing.Point(140, 13);
+            this.label40.Location = new System.Drawing.Point(139, 16);
             this.label40.Name = "label40";
             this.label40.Size = new System.Drawing.Size(49, 16);
             this.label40.TabIndex = 1;
@@ -845,17 +1120,25 @@
             // 
             // groupBox5
             // 
+            this.groupBox5.Controls.Add(this.faktxtUcesce);
             this.groupBox5.Controls.Add(this.fakcmbDodatnaD2);
             this.groupBox5.Controls.Add(this.label45);
             this.groupBox5.Controls.Add(this.fakcmbDodatnaD1);
             this.groupBox5.Controls.Add(this.label39);
             this.groupBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.groupBox5.Location = new System.Drawing.Point(6, 299);
+            this.groupBox5.Location = new System.Drawing.Point(22, 369);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(957, 42);
             this.groupBox5.TabIndex = 5;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Dodatne dijagnoze";
+            // 
+            // faktxtUcesce
+            // 
+            this.faktxtUcesce.Location = new System.Drawing.Point(482, 12);
+            this.faktxtUcesce.Name = "faktxtUcesce";
+            this.faktxtUcesce.Size = new System.Drawing.Size(100, 22);
+            this.faktxtUcesce.TabIndex = 6;
             // 
             // fakcmbDodatnaD2
             // 
@@ -863,12 +1146,12 @@
             this.fakcmbDodatnaD2.Location = new System.Drawing.Point(612, 15);
             this.fakcmbDodatnaD2.Name = "fakcmbDodatnaD2";
             this.fakcmbDodatnaD2.Size = new System.Drawing.Size(321, 24);
-            this.fakcmbDodatnaD2.TabIndex = 4;
+            this.fakcmbDodatnaD2.TabIndex = 1;
             // 
             // label45
             // 
             this.label45.AutoSize = true;
-            this.label45.Location = new System.Drawing.Point(581, 23);
+            this.label45.Location = new System.Drawing.Point(577, 18);
             this.label45.Name = "label45";
             this.label45.Size = new System.Drawing.Size(25, 16);
             this.label45.TabIndex = 1;
@@ -877,15 +1160,15 @@
             // fakcmbDodatnaD1
             // 
             this.fakcmbDodatnaD1.FormattingEnabled = true;
-            this.fakcmbDodatnaD1.Location = new System.Drawing.Point(142, 15);
+            this.fakcmbDodatnaD1.Location = new System.Drawing.Point(136, 15);
             this.fakcmbDodatnaD1.Name = "fakcmbDodatnaD1";
             this.fakcmbDodatnaD1.Size = new System.Drawing.Size(321, 24);
-            this.fakcmbDodatnaD1.TabIndex = 4;
+            this.fakcmbDodatnaD1.TabIndex = 0;
             // 
             // label39
             // 
             this.label39.AutoSize = true;
-            this.label39.Location = new System.Drawing.Point(111, 23);
+            this.label39.Location = new System.Drawing.Point(105, 18);
             this.label39.Name = "label39";
             this.label39.Size = new System.Drawing.Size(25, 16);
             this.label39.TabIndex = 1;
@@ -903,16 +1186,16 @@
             // 
             this.fakcmbSluzbaOtp.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.fakcmbSluzbaOtp.FormattingEnabled = true;
-            this.fakcmbSluzbaOtp.Location = new System.Drawing.Point(773, 230);
+            this.fakcmbSluzbaOtp.Location = new System.Drawing.Point(461, 282);
             this.fakcmbSluzbaOtp.Name = "fakcmbSluzbaOtp";
-            this.fakcmbSluzbaOtp.Size = new System.Drawing.Size(163, 24);
-            this.fakcmbSluzbaOtp.TabIndex = 4;
+            this.fakcmbSluzbaOtp.Size = new System.Drawing.Size(478, 24);
+            this.fakcmbSluzbaOtp.TabIndex = 6;
             // 
             // label47
             // 
             this.label47.AutoSize = true;
             this.label47.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label47.Location = new System.Drawing.Point(680, 235);
+            this.label47.Location = new System.Drawing.Point(368, 287);
             this.label47.Name = "label47";
             this.label47.Size = new System.Drawing.Size(88, 15);
             this.label47.TabIndex = 1;
@@ -924,8 +1207,8 @@
             this.fakcmbSluzbaPri.FormattingEnabled = true;
             this.fakcmbSluzbaPri.Location = new System.Drawing.Point(461, 230);
             this.fakcmbSluzbaPri.Name = "fakcmbSluzbaPri";
-            this.fakcmbSluzbaPri.Size = new System.Drawing.Size(163, 24);
-            this.fakcmbSluzbaPri.TabIndex = 4;
+            this.fakcmbSluzbaPri.Size = new System.Drawing.Size(478, 24);
+            this.fakcmbSluzbaPri.TabIndex = 5;
             // 
             // label46
             // 
@@ -940,36 +1223,36 @@
             // fakcmbZavrsnaDij
             // 
             this.fakcmbZavrsnaDij.FormattingEnabled = true;
-            this.fakcmbZavrsnaDij.Location = new System.Drawing.Point(618, 267);
+            this.fakcmbZavrsnaDij.Location = new System.Drawing.Point(634, 336);
             this.fakcmbZavrsnaDij.Name = "fakcmbZavrsnaDij";
             this.fakcmbZavrsnaDij.Size = new System.Drawing.Size(321, 24);
-            this.fakcmbZavrsnaDij.TabIndex = 4;
+            this.fakcmbZavrsnaDij.TabIndex = 8;
             // 
             // fakcmbUputnaDij
             // 
             this.fakcmbUputnaDij.FormattingEnabled = true;
-            this.fakcmbUputnaDij.Location = new System.Drawing.Point(148, 267);
+            this.fakcmbUputnaDij.Location = new System.Drawing.Point(158, 336);
             this.fakcmbUputnaDij.Name = "fakcmbUputnaDij";
             this.fakcmbUputnaDij.Size = new System.Drawing.Size(321, 24);
-            this.fakcmbUputnaDij.TabIndex = 4;
+            this.fakcmbUputnaDij.TabIndex = 7;
             // 
             // fakcmbVrstaLec
             // 
             this.fakcmbVrstaLec.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.fakcmbVrstaLec.FormattingEnabled = true;
-            this.fakcmbVrstaLec.Location = new System.Drawing.Point(279, 230);
+            this.fakcmbVrstaLec.Location = new System.Drawing.Point(122, 287);
             this.fakcmbVrstaLec.Name = "fakcmbVrstaLec";
-            this.fakcmbVrstaLec.Size = new System.Drawing.Size(76, 24);
+            this.fakcmbVrstaLec.Size = new System.Drawing.Size(143, 24);
             this.fakcmbVrstaLec.TabIndex = 4;
             // 
             // fakcmbTipUsluge
             // 
             this.fakcmbTipUsluge.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.fakcmbTipUsluge.FormattingEnabled = true;
-            this.fakcmbTipUsluge.Location = new System.Drawing.Point(101, 230);
+            this.fakcmbTipUsluge.Location = new System.Drawing.Point(122, 230);
             this.fakcmbTipUsluge.Name = "fakcmbTipUsluge";
-            this.fakcmbTipUsluge.Size = new System.Drawing.Size(76, 24);
-            this.fakcmbTipUsluge.TabIndex = 4;
+            this.fakcmbTipUsluge.Size = new System.Drawing.Size(143, 24);
+            this.fakcmbTipUsluge.TabIndex = 3;
             // 
             // fakdtpDatumPoc
             // 
@@ -977,7 +1260,7 @@
             this.fakdtpDatumPoc.Location = new System.Drawing.Point(193, 189);
             this.fakdtpDatumPoc.Name = "fakdtpDatumPoc";
             this.fakdtpDatumPoc.Size = new System.Drawing.Size(120, 22);
-            this.fakdtpDatumPoc.TabIndex = 1;
+            this.fakdtpDatumPoc.TabIndex = 0;
             // 
             // label33
             // 
@@ -990,15 +1273,16 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.faktxtSifraOL);
+            this.groupBox4.Controls.Add(this.fakcmbFilijala);
+            this.groupBox4.Controls.Add(this.fakcmbPOO);
+            this.groupBox4.Controls.Add(this.fakcmbOO);
             this.groupBox4.Controls.Add(this.fakcmbDrzava);
             this.groupBox4.Controls.Add(this.fakcmbIspostava);
-            this.groupBox4.Controls.Add(this.fakcmbFilijala);
             this.groupBox4.Controls.Add(this.fakcmbOOP);
-            this.groupBox4.Controls.Add(this.fakrdbKonvencijaNE);
             this.groupBox4.Controls.Add(this.fakrdbNosilacNE);
             this.groupBox4.Controls.Add(this.label44);
             this.groupBox4.Controls.Add(this.label30);
-            this.groupBox4.Controls.Add(this.fakrdbKonvencijaDA);
             this.groupBox4.Controls.Add(this.label29);
             this.groupBox4.Controls.Add(this.fakrdbNosilacDA);
             this.groupBox4.Controls.Add(this.label28);
@@ -1025,9 +1309,41 @@
             this.groupBox4.Location = new System.Drawing.Point(24, 6);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(931, 168);
-            this.groupBox4.TabIndex = 0;
+            this.groupBox4.TabIndex = 4;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Podatci o osiguraniku";
+            // 
+            // faktxtSifraOL
+            // 
+            this.faktxtSifraOL.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.faktxtSifraOL.Location = new System.Drawing.Point(295, 22);
+            this.faktxtSifraOL.Name = "faktxtSifraOL";
+            this.faktxtSifraOL.Size = new System.Drawing.Size(54, 20);
+            this.faktxtSifraOL.TabIndex = 12;
+            this.faktxtSifraOL.Visible = false;
+            // 
+            // fakcmbFilijala
+            // 
+            this.fakcmbFilijala.Location = new System.Drawing.Point(437, 108);
+            this.fakcmbFilijala.Name = "fakcmbFilijala";
+            this.fakcmbFilijala.Size = new System.Drawing.Size(163, 22);
+            this.fakcmbFilijala.TabIndex = 6;
+            // 
+            // fakcmbPOO
+            // 
+            this.fakcmbPOO.FormattingEnabled = true;
+            this.fakcmbPOO.Location = new System.Drawing.Point(549, 21);
+            this.fakcmbPOO.Name = "fakcmbPOO";
+            this.fakcmbPOO.Size = new System.Drawing.Size(51, 24);
+            this.fakcmbPOO.TabIndex = 5;
+            // 
+            // fakcmbOO
+            // 
+            this.fakcmbOO.FormattingEnabled = true;
+            this.fakcmbOO.Location = new System.Drawing.Point(488, 21);
+            this.fakcmbOO.Name = "fakcmbOO";
+            this.fakcmbOO.Size = new System.Drawing.Size(55, 24);
+            this.fakcmbOO.TabIndex = 5;
             // 
             // fakcmbDrzava
             // 
@@ -1042,35 +1358,18 @@
             this.fakcmbIspostava.FormattingEnabled = true;
             this.fakcmbIspostava.Location = new System.Drawing.Point(437, 133);
             this.fakcmbIspostava.Name = "fakcmbIspostava";
-            this.fakcmbIspostava.Size = new System.Drawing.Size(121, 24);
+            this.fakcmbIspostava.Size = new System.Drawing.Size(163, 24);
             this.fakcmbIspostava.TabIndex = 4;
-            // 
-            // fakcmbFilijala
-            // 
-            this.fakcmbFilijala.FormattingEnabled = true;
-            this.fakcmbFilijala.Location = new System.Drawing.Point(437, 105);
-            this.fakcmbFilijala.Name = "fakcmbFilijala";
-            this.fakcmbFilijala.Size = new System.Drawing.Size(121, 24);
-            this.fakcmbFilijala.TabIndex = 4;
+            this.fakcmbIspostava.TabStop = false;
             // 
             // fakcmbOOP
             // 
             this.fakcmbOOP.FormattingEnabled = true;
             this.fakcmbOOP.Location = new System.Drawing.Point(485, 77);
             this.fakcmbOOP.Name = "fakcmbOOP";
-            this.fakcmbOOP.Size = new System.Drawing.Size(73, 24);
+            this.fakcmbOOP.Size = new System.Drawing.Size(115, 24);
             this.fakcmbOOP.TabIndex = 4;
-            // 
-            // fakrdbKonvencijaNE
-            // 
-            this.fakrdbKonvencijaNE.AutoSize = true;
-            this.fakrdbKonvencijaNE.Location = new System.Drawing.Point(871, 24);
-            this.fakrdbKonvencijaNE.Name = "fakrdbKonvencijaNE";
-            this.fakrdbKonvencijaNE.Size = new System.Drawing.Size(41, 20);
-            this.fakrdbKonvencijaNE.TabIndex = 3;
-            this.fakrdbKonvencijaNE.TabStop = true;
-            this.fakrdbKonvencijaNE.Text = "ne";
-            this.fakrdbKonvencijaNE.UseVisualStyleBackColor = true;
+            this.fakcmbOOP.TabStop = false;
             // 
             // fakrdbNosilacNE
             // 
@@ -1079,14 +1378,13 @@
             this.fakrdbNosilacNE.Name = "fakrdbNosilacNE";
             this.fakrdbNosilacNE.Size = new System.Drawing.Size(41, 20);
             this.fakrdbNosilacNE.TabIndex = 3;
-            this.fakrdbNosilacNE.TabStop = true;
             this.fakrdbNosilacNE.Text = "ne";
             this.fakrdbNosilacNE.UseVisualStyleBackColor = true;
             // 
             // label44
             // 
             this.label44.AutoSize = true;
-            this.label44.Location = new System.Drawing.Point(652, 26);
+            this.label44.Location = new System.Drawing.Point(771, 18);
             this.label44.Name = "label44";
             this.label44.Size = new System.Drawing.Size(154, 16);
             this.label44.TabIndex = 1;
@@ -1100,17 +1398,6 @@
             this.label30.Size = new System.Drawing.Size(51, 16);
             this.label30.TabIndex = 1;
             this.label30.Text = "Država";
-            // 
-            // fakrdbKonvencijaDA
-            // 
-            this.fakrdbKonvencijaDA.AutoSize = true;
-            this.fakrdbKonvencijaDA.Location = new System.Drawing.Point(819, 24);
-            this.fakrdbKonvencijaDA.Name = "fakrdbKonvencijaDA";
-            this.fakrdbKonvencijaDA.Size = new System.Drawing.Size(42, 20);
-            this.fakrdbKonvencijaDA.TabIndex = 2;
-            this.fakrdbKonvencijaDA.TabStop = true;
-            this.fakrdbKonvencijaDA.Text = "da";
-            this.fakrdbKonvencijaDA.UseVisualStyleBackColor = true;
             // 
             // label29
             // 
@@ -1128,7 +1415,6 @@
             this.fakrdbNosilacDA.Name = "fakrdbNosilacDA";
             this.fakrdbNosilacDA.Size = new System.Drawing.Size(42, 20);
             this.fakrdbNosilacDA.TabIndex = 2;
-            this.fakrdbNosilacDA.TabStop = true;
             this.fakrdbNosilacDA.Text = "da";
             this.fakrdbNosilacDA.UseVisualStyleBackColor = true;
             // 
@@ -1180,10 +1466,11 @@
             // 
             // faktxtOO
             // 
-            this.faktxtOO.Location = new System.Drawing.Point(485, 24);
+            this.faktxtOO.Location = new System.Drawing.Point(604, 21);
             this.faktxtOO.Name = "faktxtOO";
-            this.faktxtOO.Size = new System.Drawing.Size(73, 22);
+            this.faktxtOO.Size = new System.Drawing.Size(35, 22);
             this.faktxtOO.TabIndex = 0;
+            this.faktxtOO.TabStop = false;
             // 
             // label43
             // 
@@ -1265,42 +1552,47 @@
             // 
             this.faktxtIme.Location = new System.Drawing.Point(77, 133);
             this.faktxtIme.Name = "faktxtIme";
-            this.faktxtIme.Size = new System.Drawing.Size(188, 22);
+            this.faktxtIme.Size = new System.Drawing.Size(212, 22);
             this.faktxtIme.TabIndex = 0;
+            this.faktxtIme.TabStop = false;
             // 
             // faktxtPrezime
             // 
             this.faktxtPrezime.Location = new System.Drawing.Point(77, 105);
             this.faktxtPrezime.Name = "faktxtPrezime";
-            this.faktxtPrezime.Size = new System.Drawing.Size(188, 22);
+            this.faktxtPrezime.Size = new System.Drawing.Size(212, 22);
             this.faktxtPrezime.TabIndex = 0;
+            this.faktxtPrezime.TabStop = false;
             // 
             // faktxtJMBG
             // 
             this.faktxtJMBG.Location = new System.Drawing.Point(77, 77);
             this.faktxtJMBG.Name = "faktxtJMBG";
-            this.faktxtJMBG.Size = new System.Drawing.Size(188, 22);
+            this.faktxtJMBG.Size = new System.Drawing.Size(212, 22);
             this.faktxtJMBG.TabIndex = 0;
+            this.faktxtJMBG.TabStop = false;
             // 
             // faktxtLBO
             // 
             this.faktxtLBO.Location = new System.Drawing.Point(77, 49);
             this.faktxtLBO.Name = "faktxtLBO";
-            this.faktxtLBO.Size = new System.Drawing.Size(188, 22);
+            this.faktxtLBO.Size = new System.Drawing.Size(212, 22);
             this.faktxtLBO.TabIndex = 0;
+            this.faktxtLBO.TabStop = false;
             // 
             // faktxtBrojZK
             // 
             this.faktxtBrojZK.Location = new System.Drawing.Point(77, 21);
             this.faktxtBrojZK.Name = "faktxtBrojZK";
-            this.faktxtBrojZK.Size = new System.Drawing.Size(188, 22);
+            this.faktxtBrojZK.Size = new System.Drawing.Size(212, 22);
             this.faktxtBrojZK.TabIndex = 0;
+            this.faktxtBrojZK.TabStop = false;
             // 
             // label38
             // 
             this.label38.AutoSize = true;
             this.label38.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label38.Location = new System.Drawing.Point(493, 271);
+            this.label38.Location = new System.Drawing.Point(509, 339);
             this.label38.Name = "label38";
             this.label38.Size = new System.Drawing.Size(119, 16);
             this.label38.TabIndex = 1;
@@ -1310,7 +1602,7 @@
             // 
             this.label35.AutoSize = true;
             this.label35.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label35.Location = new System.Drawing.Point(197, 234);
+            this.label35.Location = new System.Drawing.Point(40, 291);
             this.label35.Name = "label35";
             this.label35.Size = new System.Drawing.Size(77, 15);
             this.label35.TabIndex = 1;
@@ -1320,7 +1612,7 @@
             // 
             this.label37.AutoSize = true;
             this.label37.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label37.Location = new System.Drawing.Point(29, 271);
+            this.label37.Location = new System.Drawing.Point(39, 339);
             this.label37.Name = "label37";
             this.label37.Size = new System.Drawing.Size(113, 16);
             this.label37.TabIndex = 1;
@@ -1339,7 +1631,7 @@
             // 
             this.label34.AutoSize = true;
             this.label34.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label34.Location = new System.Drawing.Point(30, 234);
+            this.label34.Location = new System.Drawing.Point(53, 233);
             this.label34.Name = "label34";
             this.label34.Size = new System.Drawing.Size(64, 15);
             this.label34.TabIndex = 1;
@@ -1350,8 +1642,8 @@
             this.faktxtBrojKartona.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.faktxtBrojKartona.Location = new System.Drawing.Point(771, 191);
             this.faktxtBrojKartona.Name = "faktxtBrojKartona";
-            this.faktxtBrojKartona.Size = new System.Drawing.Size(165, 22);
-            this.faktxtBrojKartona.TabIndex = 0;
+            this.faktxtBrojKartona.Size = new System.Drawing.Size(168, 22);
+            this.faktxtBrojKartona.TabIndex = 2;
             // 
             // label36
             // 
@@ -1372,38 +1664,18 @@
             // 
             this.oLTableAdapter.ClearBeforeFill = true;
             // 
-            // ID_Usluga
-            // 
-            this.ID_Usluga.DataPropertyName = "ID_Usluga";
-            this.ID_Usluga.HeaderText = "IDUsluga";
-            this.ID_Usluga.Name = "ID_Usluga";
-            this.ID_Usluga.Visible = false;
-            // 
-            // dgvcmbSifra
-            // 
-            this.dgvcmbSifra.DataPropertyName = "SifraUsluga";
-            this.dgvcmbSifra.HeaderText = "Usluga";
-            this.dgvcmbSifra.Name = "dgvcmbSifra";
-            // 
-            // dgvtxtSifraEFOsiguranik
-            // 
-            this.dgvtxtSifraEFOsiguranik.DataPropertyName = "SifraEFOsiguranik";
-            this.dgvtxtSifraEFOsiguranik.HeaderText = "SifraEFOsiguranik";
-            this.dgvtxtSifraEFOsiguranik.Name = "dgvtxtSifraEFOsiguranik";
-            this.dgvtxtSifraEFOsiguranik.Visible = false;
-            // 
-            // frmOsnovna
+            // FrmOsnovna
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1109, 695);
+            this.ClientSize = new System.Drawing.Size(1109, 754);
             this.Controls.Add(this.tabControl1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "frmOsnovna";
+            this.Name = "FrmOsnovna";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmOsnovna";
-            this.Load += new System.EventHandler(this.frmOsnovna_Load);
+            this.Load += new System.EventHandler(this.FrmOsnovna_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPretraga.ResumeLayout(false);
             this.tabPretraga.PerformLayout();
@@ -1419,6 +1691,8 @@
             this.groupBox2.PerformLayout();
             this.tabFaktura.ResumeLayout(false);
             this.tabFaktura.PerformLayout();
+            this.groupBox7.ResumeLayout(false);
+            this.groupBox7.PerformLayout();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fakdgvLek)).EndInit();
@@ -1489,14 +1763,8 @@
         private System.Windows.Forms.BindingSource oLBindingSource;
         private SekundarDataSetTableAdapters.OLTableAdapter oLTableAdapter;
         private System.Windows.Forms.BindingSource oLBindingSource1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvtxtLBO;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvtxtJMBG;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvtxtBrojZK;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvtxtIme;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvtxtPrezime;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.ComboBox fakcmbIspostava;
-        private System.Windows.Forms.ComboBox fakcmbFilijala;
         private System.Windows.Forms.ComboBox fakcmbOOP;
         private System.Windows.Forms.RadioButton fakrdbNosilacNE;
         private System.Windows.Forms.Label label29;
@@ -1531,9 +1799,7 @@
         private System.Windows.Forms.DateTimePicker fakdtpDatumPoc;
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.ComboBox fakcmbDrzava;
-        private System.Windows.Forms.RadioButton fakrdbKonvencijaNE;
         private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.RadioButton fakrdbKonvencijaDA;
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.TextBox faktxtVrstaIspKonv;
         private System.Windows.Forms.TextBox faktxtNapomenaKonv;
@@ -1558,8 +1824,44 @@
         private System.Windows.Forms.DataGridView fakdgvLek;
         private System.Windows.Forms.DataGridView fakdgvMaterijal;
         private System.Windows.Forms.Button fakbtnSnimiFakturu;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID_Usluga;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvtxtSifra;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvtxtLBO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvtxtJMBG;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvtxtBrojZK;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvtxtIme;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvtxtPrezime;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvcmbOO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Je_nosilac;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvtxtOO_participacije;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Sifra_Filijala;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Sifra_Ispostava;
+        private System.Windows.Forms.ComboBox fakcmbPOO;
+        private System.Windows.Forms.ComboBox fakcmbOO;
+        private System.Windows.Forms.TextBox faktxtUcesce;
+        private System.Windows.Forms.TextBox faktxtIznosFakture;
+        private System.Windows.Forms.TextBox faktxtID_EFVrsta;
+        private System.Windows.Forms.TextBox fakcmbFilijala;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvtxtID_Usluga;
         private System.Windows.Forms.DataGridViewComboBoxColumn dgvcmbSifra;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvtxtSifraEFOsiguranik;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvtxtKolicina;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvtxtCena;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvtxtUkupnaCena;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvtxtDatum;
+        private System.Windows.Forms.DataGridViewComboBoxColumn dgvcmbID_Lekar;
+        private System.Windows.Forms.DataGridViewComboBoxColumn dgvcmbSluzba;
+        private System.Windows.Forms.DataGridViewComboBoxColumn dgvcmbSifSluUput;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvtxtUcesce;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvtxtEksterniIDUsluge;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvtxtNapomena;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvtxtSifraElFak;
+        private System.Windows.Forms.DataGridViewComboBoxColumn dgvcmbVrstaLecenja;
+        private System.Windows.Forms.Label label50;
+        private System.Windows.Forms.Label label49;
+        private System.Windows.Forms.Label label48;
+        private System.Windows.Forms.TextBox faktxtSifraOL;
+        private System.Windows.Forms.GroupBox groupBox7;
+        private System.Windows.Forms.RadioButton fakrdbKonvencijaNE;
+        private System.Windows.Forms.RadioButton fakrdbKonvencijaDA;
     }
 }

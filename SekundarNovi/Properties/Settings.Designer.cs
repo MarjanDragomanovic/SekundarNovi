@@ -12,7 +12,7 @@ namespace SekundarNovi.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "15.5.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "15.6.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -27,8 +27,8 @@ namespace SekundarNovi.Properties {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
         [global::System.Configuration.DefaultSettingValueAttribute("Data Source=K-0600-097\\SQL14;Initial Catalog=Sekundar;Integrated Security=True;Co" +
-            "nnect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=Rea" +
-            "dWrite;MultiSubnetFailover=False")]
+            "nnect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=Re" +
+            "adWrite;MultiSubnetFailover=False")]
         public string connString {
             get {
                 return ((string)(this["connString"]));
@@ -38,7 +38,9 @@ namespace SekundarNovi.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=K-0600-097\\SQL14;Initial Catalog=Sekundar;Integrated Security=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=K-0600-097\\SQL14;Initial Catalog=Sekundar;Integrated Security=True;Co" +
+            "nnect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=Re" +
+            "adWrite;MultiSubnetFailover=False")]
         public string SekundarConnectionString {
             get {
                 return ((string)(this["SekundarConnectionString"]));

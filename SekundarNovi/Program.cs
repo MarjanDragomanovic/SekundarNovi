@@ -16,7 +16,7 @@ namespace SekundarNovi
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmOsnovna());
+            Application.Run(new FrmOsnovna());
         }
     }
 }
